@@ -111,8 +111,6 @@ export default {
 </script>
 
 <style lang="postcss">
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-
 .main {
 	@apply px-12 py-16;
 	width: 100%;
