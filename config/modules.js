@@ -12,6 +12,12 @@ export default [
 		}
 	],
 	[
+		'@nuxtjs/google-analytics',
+		{
+			id: 'UA-177623519-2
+		}
+	],
+	[
 		'@nuxtjs/robots',
 		{
 			Sitemap: `${HOSTNAME}/sitemap.xml`
