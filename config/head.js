@@ -26,7 +26,7 @@ export default {
       hid: 'description',
       name: 'description',
       property: 'description',
-      content: 'I am software enginer'
+      content: 'Informasi seputar pemrograman, komputer, pendidikan dan tips dan trik untuk saling belajar'
     },
     {
 			hid: 'og:title',
@@ -38,7 +38,7 @@ export default {
 			hid: 'og:description',
 			name: 'og:description',
 			property: 'og:description',
-			content: 'I am software enginer'
+			content: 'Informasi seputar pemrograman, komputer, pendidikan dan tips dan trik untuk saling belajar'
     },
     {
       hid: 'og:image:alt',
