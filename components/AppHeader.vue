@@ -122,7 +122,7 @@ header {
 			grid-template-columns: 1fr 1fr;
 
 			@media screen and (max-width: 768px) {
-				grid-template-columns: 2fr 1fr;
+				grid-template-columns: 3fr 1fr;
 			}
 
 			&__logo {
@@ -157,6 +157,10 @@ header {
 
 					> li {
 						@apply my-0 py-0 ml-6;
+
+						@media screen and (max-width: 576px) {
+							font-size: 1rem;
+						}
 
 						> .header__top__link__home {
 							color: var(--text-nav);
