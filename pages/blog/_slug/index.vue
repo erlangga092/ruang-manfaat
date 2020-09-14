@@ -14,8 +14,8 @@
 		<client-only>
 			<vue-scroll-indicator 
 				height="2px"
-				color="var(--text-normal)"
-				background="var(--bg)"
+				color="var(--text-indicator)"
+				background="var(--bg-nav)"
 			/>
 		</client-only>
 		<app-to-top />
@@ -57,7 +57,7 @@ export default {
 				component: blog.vue.component,
 			}
 		} catch (err) {
-			this.$router.replace(this.localePath({ name: 'blog' }));
+			this.$router.replace('/');
 		}
 	},
 	mounted() {
@@ -193,7 +193,7 @@ export default {
 		}
 
 		&__wrap {
-			@apply mb-12 px-16 rounded-md overflow-hidden shadow-2xl z-10;
+			@apply mb-12 px-16 rounded-md overflow-hidden shadow-lg z-10;
 			background-color: var(--card-bg);
 			width: 75%;
 			display: flex;
@@ -244,5 +244,10 @@ export default {
 			display: block;
 		}
 	}
+}
+
+.dynamic-markdown {
+	width: 100%;
+	box-sizing: border-box;
 }
 </style>

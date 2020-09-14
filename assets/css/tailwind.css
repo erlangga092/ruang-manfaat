@@ -33,6 +33,7 @@ body {
     --inline-code-bg: theme('colors.gray.300');
     --inline-code-border: theme('colors.gray.300');
     --inline-code-text: theme('colors.gray.700');
+    --text-indicator: theme('colors.gray.300');
   }
 
   &.dark {
@@ -48,6 +49,7 @@ body {
     --inline-code-bg: theme('colors.gray.900');
     --inline-code-border: theme('colors.gray.800');
     --inline-code-text: theme('colors.gray.300');
+    --text-indicator: theme('colors.gray.300');
   }
 }
 
@@ -92,6 +94,10 @@ h6 {
 	@apply text-xs;
 }
 
+pre {
+	box-sizing: border-box;
+}
+
 p > code,
 li > code,
 strong > code {
@@ -106,6 +112,8 @@ strong > code {
 
 pre > code {
 	@apply rounded;
+	box-sizing: border-box;
+	overflow-x: scroll;
 	cursor: text;
 }
 
