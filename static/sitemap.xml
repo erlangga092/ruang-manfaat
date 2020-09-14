@@ -9,7 +9,13 @@
 
 <url>
   <loc>https://ruang-manfaat.now.sh/</loc>
-  <lastmod>2020-09-14T05:06:16+00:00</lastmod>
+  <lastmod>2020-09-14T05:47:06+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ruang-manfaat.now.sh/blog/halo-dunia</loc>
+  <lastmod>2020-09-14T05:47:06+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 
