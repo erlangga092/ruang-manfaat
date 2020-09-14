@@ -22,7 +22,7 @@ body {
 
 	&.light {
     --bg: theme('colors.white');
-    --bg-nav: linear-gradient(35deg, #5e72e4 0, #825ee4 100%);
+    --bg-nav: theme('colors.green.800');
     --text-nav: theme('colors.white');
     --bg-disabled: theme('colors.gray.100');
     --text-normal: theme('colors.gray.700');
@@ -53,10 +53,6 @@ body {
 
 a {
   color: var(--text-link);
-
-  &:hover {
-    @apply underline;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {

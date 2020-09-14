@@ -82,7 +82,7 @@ export default {
 
 <style lang="postcss">
 .main {
-	@apply px-12 py-16;
+	@apply px-12 py-4;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -155,8 +155,9 @@ export default {
 
 				&__summary {
 					> p {
-						@apply mt-0 mb-2 py-0 leading-normal;
+						@apply mt-0 mb-2 py-0 leading-normal text-base;
 						color: var(--text-normal);
+						font-family: 'Merriweather sans', sans-serif;
 					} 
 				}
 

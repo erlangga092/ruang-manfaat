@@ -5,8 +5,8 @@
       class="switch__btn"
       @click="$emit('input', !value)"
     >
-      <a v-if="value">Light</a>
-      <a v-else="">Dark</a>
+      <span v-if="value">Light</span>
+      <span v-else="">Dark</span>
     </button>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
 	&__btn {
 		border-color: transparent;
 
-		> a {
+		> span {
 			color: var(--text-nav);
 			font-family: 'Righteous', cursive;
 		}
