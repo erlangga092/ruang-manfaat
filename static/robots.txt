@@ -1,2 +1,3 @@
 User-agent: *
+Disallow: 
 Sitemap: https://ruang-manfaat.now.sh/sitemap.xml
