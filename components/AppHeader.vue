@@ -166,6 +166,10 @@ header {
 						> .header__top__link__home {
 							color: var(--text-nav);
 							font-family: 'Righteous', cursive;
+
+							@media screen and (max-width: 576px) {
+								display: none;
+							}
 						}
 					}
 
