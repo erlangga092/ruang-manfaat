@@ -131,7 +131,7 @@ header {
 				height: 100%;
 
 				&__link {
-					@apply my-0 py-0 px-3 font-medium text-2xl no-underline;
+					@apply my-0 py-0 px-0 font-medium text-2xl no-underline;
 					font-family: 'Righteous', cursive;
 					color: var(--text-nav);
 
@@ -160,6 +160,7 @@ header {
 
 						@media screen and (max-width: 576px) {
 							font-size: 1rem;
+							margin-left: 1rem;
 						}
 
 						> .header__top__link__home {
