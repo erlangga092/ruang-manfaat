@@ -87,13 +87,20 @@ export default {
 
 <style lang="postcss">
 header {
-	@apply w-full top-0 left-0 mx-auto z-20 fixed;
+	@apply z-20;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
 	.header {
-		@apply w-full shadow-xl px-12;
+		@apply shadow-xl px-12;
+		width: 100%;
 		background-color: var(--bg-nav);
 		height: 5rem;
 		display: grid;
@@ -110,7 +117,7 @@ header {
 		}
 
 		&__top {
-			@apply w-full;
+			width: 100%;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 
