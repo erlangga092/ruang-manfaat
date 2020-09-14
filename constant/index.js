@@ -1,0 +1,1 @@
+export const HOSTNAME = 'https://ruang-manfaat.now.sh'

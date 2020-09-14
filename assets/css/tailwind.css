@@ -37,7 +37,7 @@ body {
 
   &.dark {
     --bg: theme('colors.gray.800');
-    --bg-nav: theme('colors.gray.800');
+    --bg-nav: theme('colors.gray.700');
     --text-nav: theme('colors.gray.300');
     --bg-disabled: theme('colors.gray.600');
     --text-normal: theme('colors.gray.300');
@@ -52,11 +52,10 @@ body {
 }
 
 a {
-  @apply underline;
   color: var(--text-link);
 
   &:hover {
-    @apply no-underline;
+    @apply underline;
   }
 }
 

@@ -3,7 +3,12 @@
 		<div class="header">
 			<section class="header__top">
 				<div class="header__top__logo">
-					<h1>Ruang-Manfaat</h1>
+					<nuxt-link
+						to="/"
+						class="header__top__logo__link"
+					>
+						Ruang-Manfaat
+					</nuxt-link>
 				</div>
 				<div class="header__top__search">
 					<input type="text" placeholder="Cari artikel">
@@ -18,9 +23,13 @@
 			</section>
 			<section class="header__bottom">
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Tags</a></li>
+					<li>
+						<nuxt-link
+							to="/"
+						>
+							Home
+						</nuxt-link>
+					</li>
 				</ul>
 			</section>
 		</div>
@@ -38,11 +47,13 @@ export default {
 	},
 	data() {
 		return {
-			isDark: false
+			isDark: false,
+			isLogo: 'Ruang-Manfaat'
 		}
 	},
 	mounted() {
 		this.initColorScheme();
+		this.initLogo();
 	},
 	methods: {
 		initColorScheme() {
@@ -63,6 +74,19 @@ export default {
 					})
 				}
 			}
+		},
+		initLogo() {
+			const logoMediaQuery = window.matchMedia('(max-width: 1224px)');
+			logoMediaQuery.addListener((e) => {
+				const logoQuery = e.matches;
+				if (logoQuery) {
+					document.querySelector('.header__top__logo__link')
+						.innerText = 'RM'
+				} else {
+					document.querySelector('.header__top__logo__link')
+						.innerText = 'Ruang-Manfaat'
+				}
+			})
 		}
 	},
 	head() {
@@ -76,7 +100,6 @@ export default {
 </script>
 
 <style lang="postcss">
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 header {
 	@apply w-full top-0 left-0 mx-auto z-20 fixed;
 	display: flex;
@@ -84,23 +107,33 @@ header {
 	justify-content: center;
 
 	.header {
-		@apply w-full h-32 shadow-lg px-12;
+		@apply w-full shadow-lg px-12;
+		height: 8rem;
 		background: var(--bg-nav);
 		display: grid;
-		grid-template-rows: 2fr 1fr;
+		grid-template-rows: 2fr auto;
+
+		@media screen and (max-width: 768px) {
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
 
 		&__top {
 			@apply w-full;
 			display: grid;
 			grid-template-columns: 1fr 4fr 1fr;
 
+			@media screen and (max-width: 992px) {
+				grid-template-columns: 1fr 5fr 1fr;
+			}
+
 			&__logo {
 				display: flex;
 				align-items: center;
 				height: 100%;
 
-				> h1 {
-					@apply my-0 py-1 font-medium text-2xl;
+				&__link {
+					@apply my-0 py-1 font-medium text-2xl border-b-4 border-yellow-500 no-underline;
 					font-family: 'Righteous', cursive;
 					color: var(--text-nav);
 				}
@@ -170,6 +203,10 @@ header {
 				display: flex;
 				align-items: center;
 				justify-content: space-evenly;
+
+				@media screen and (max-width: 768px) {
+					width: 60%;
+				}
 
 				> li > a {
 					@apply text-lg;
