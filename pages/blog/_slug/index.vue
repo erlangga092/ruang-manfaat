@@ -193,7 +193,7 @@ export default {
 		}
 
 		&__wrap {
-			@apply mb-12 px-16 rounded-md overflow-hidden shadow-lg z-10;
+			@apply mb-12 px-16 rounded-md overflow-hidden shadow-xl z-10;
 			background-color: var(--card-bg);
 			width: 75%;
 			display: flex;
@@ -218,9 +218,10 @@ export default {
 			}
 
 			@media screen and (max-width: 576px) {
+				width: 95%;
 				margin-top: -31.5rem;
-				padding-right: 2.5rem;
-				padding-left: 2.5rem;
+				padding-right: 1.75rem;
+				padding-left: 1.75rem;
 			}
 
 			&__meta {
@@ -228,6 +229,10 @@ export default {
 				
 				> h1 {
 					font-family: 'Bitter', serif;
+
+					@media screen and (max-width: 576px) {
+						margin-top: 1.5rem;
+					}
 				}
 			}
 

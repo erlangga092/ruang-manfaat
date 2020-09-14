@@ -30,7 +30,8 @@ Pada halaman teks editor silahkan ketik `!` kemudian tekan `tab`, maka secara ot
 <head> 
 <!-- Tag pembuka header -->
 
-	<meta charset="UTF-8"> <!-- Tag yang mendefinisikan kita menggunakan encoding UTF-8 -->
+	<meta charset="UTF-8"> 
+	<!-- Tag yang mendefinisikan kita menggunakan encoding UTF-8 -->
 
 	<title>Document</title> 
 	<!-- Tag ini mendefinisikan judul dari halaman -->

@@ -7,7 +7,7 @@
 						to="/"
 						class="header__top__logo__link"
 					>
-						Ruang-Manfaat
+						{{ isLogo }}
 					</nuxt-link>
 				</div>
 				<div class="header__top__link">
@@ -71,13 +71,7 @@ export default {
 			const logoMediaQuery = window.matchMedia('(max-width: 1224px)');
 			logoMediaQuery.addListener((e) => {
 				const logoQuery = e.matches;
-				if (logoQuery) {
-					document.querySelector('.header__top__logo__link')
-						.innerText = 'RM'
-				} else {
-					document.querySelector('.header__top__logo__link')
-						.innerText = 'Ruang-Manfaat'
-				}
+				logoQuery ? this.isLogo = 'RM' : this.isLogo = 'Ruang-Manfaat';
 			})
 		}
 	},
@@ -121,7 +115,7 @@ header {
 				height: 100%;
 
 				&__link {
-					@apply my-0 py-0 px-3 font-medium text-2xl no-underline border-l-4 border-yellow-600;
+					@apply my-0 py-0 px-3 font-medium text-2xl no-underline;
 					font-family: 'Righteous', cursive;
 					color: var(--text-nav);
 				}
