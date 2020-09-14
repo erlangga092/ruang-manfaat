@@ -104,10 +104,19 @@ header {
 			padding-right: 1.5rem;
 		}
 
+		@media screen and (max-width: 768px) {
+			padding-left: 1.25rem;
+			padding-right: 1.25rem;
+		}
+
 		&__top {
 			@apply w-full;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
+
+			@media screen and (max-width: 768px) {
+				grid-template-columns: 2fr 1fr;
+			}
 
 			&__logo {
 				display: flex;
@@ -118,6 +127,10 @@ header {
 					@apply my-0 py-0 px-3 font-medium text-2xl no-underline;
 					font-family: 'Righteous', cursive;
 					color: var(--text-nav);
+
+					@media screen and (max-width: 576px) {
+						font-size: 1.25rem;
+					}
 				}
 			}
 

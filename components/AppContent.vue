@@ -94,7 +94,7 @@ export default {
 	}
 	
 	&__title {
-		@apply my-8 w-full;
+		@apply my-4 w-full;
 		display: flex;
 		align-items: center;
 		justify-content: center;
