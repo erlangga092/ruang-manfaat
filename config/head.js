@@ -73,6 +73,11 @@ export default {
   // Taken from: https://github.com/manniL/lichter.io/blob/master/config/head.js
   __dangerouslyDisableSanitizers: ['script'],
   script: [
+  	{
+    	'data-ad-client': "ca-pub-2648698080853988",
+    	async: true,
+    	src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    },
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({

@@ -22,7 +22,7 @@ body {
 
 	&.light {
     --bg: theme('colors.white');
-    --bg-nav: theme('colors.green.800');
+    --bg-nav: theme('colors.purple.700');
     --text-nav: theme('colors.white');
     --bg-disabled: theme('colors.gray.100');
     --text-normal: theme('colors.gray.700');
