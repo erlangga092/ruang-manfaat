@@ -88,7 +88,7 @@ export default {
         description: 'A personal site of Ruang Manfaat',
         about: 'A personal site of Ruang Manfaat',
         keywords: 'ruang manfaat, Ruang Manfaat',
-        genre: ['Personal', 'Tutorial', 'Programming', 'Review', 'Science'],
+        genre: ['Sharing', 'Tutorial', 'Programming', 'Review', 'Science'],
         copyrightYear: new Date().getFullYear(),
         dateCreated: '2017-03-12',
         inLanguage: ['Bahasa Indonesia', 'English'],

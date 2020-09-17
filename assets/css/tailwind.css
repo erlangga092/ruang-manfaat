@@ -5,8 +5,8 @@
 @import './fonts';
 @import './darcula';
 @import './transition';
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-
+/*@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+*/
 /* purgecss start ignore */
 html, body {
 	scroll-behavior: smooth;

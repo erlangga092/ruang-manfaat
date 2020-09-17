@@ -18,9 +18,6 @@
 						<li class="mx-0 my-0 mr-4">
 							<nuxt-link to="/">Home</nuxt-link>
 						</li>
-						<li class="mx-0 my-0 mr-4">
-							<nuxt-link to="/blog">Blog</nuxt-link>
-						</li>
 					</ul>
 				</div>
 				<div class="switch__theme">
