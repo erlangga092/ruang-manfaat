@@ -8,7 +8,7 @@
 						to="/"
 						class="header__navbar__logo__home"
 					>
-						Ruang-Manfaat
+						RM
 					</nuxt-link>
 				</h1>
 			</section>
