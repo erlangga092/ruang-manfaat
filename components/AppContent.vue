@@ -77,7 +77,7 @@ export default {
 
 <style lang="postcss">
 .main {
-	@apply px-12 py-4;
+	@apply px-12 py-12;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
