@@ -21,7 +21,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
 	&.light {
-    --bg: theme('colors.gray.300');
+    --bg: theme('colors.gray.200');
     --bg-nav: theme('colors.purple.700');
     --text-nav: theme('colors.white');
     --bg-disabled: theme('colors.gray.100');

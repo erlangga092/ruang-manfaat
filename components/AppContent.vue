@@ -1,26 +1,24 @@
 <template>
-	<main class="main">
-		<section class="main__content">
-			<nuxt-link :to="`/blog/${slug}`">
-				<article class="main__content__article">
-					<div class="main__content__article__img">
-						<app-img src="/cover/2017/08/halo-dunia-image-by-marcelo-quinan.jpg" alt="title" />
-					</div>
-					<div class="main__content__article__meta">
-						<div class="main__content__article__meta__title">
-							<h1>{{ title }}</h1>
-						</div>
-						<div class="main__content__article__meta__summary">
-							<p>{{ sliceSummary(summary) }}</p>
-						</div>
-						<div class="main__content__article__meta__author">
-							<span>{{ formatDate(postedDate) }}</span>
-						</div>
-					</div>
-				</article>
-			</nuxt-link>
+	<article>
+		<section class="meta px-8 pt-4">
+			<div class="meta__title">
+				<h1 class="meta__title__teks my-4 text-xl">
+				<nuxt-link 
+					:to="`/blog/${slug}`"
+					class="links"
+				>
+					{{ title }}
+				</nuxt-link>
+				</h1>
+			</div>
+			<div class="meta__summary">
+				<p class="my-4">{{ sliceSummary(summary) }}</p>
+			</div>
 		</section>
-	</main>
+		<section class="img w-full h-full overflow-hidden">
+			<app-img :src="img" :alt="title" />
+		</section>
+	</article>
 </template>
 
 <script>
@@ -76,94 +74,50 @@ export default {
 </script>
 
 <style lang="postcss">
-.main {
-	@apply px-12 py-16;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	font-family: 'Bitter', serif;
+article {
+	@apply shadow-md;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	background-color: var(--card-bg);
+	border-radius: .375rem;
+	overflow: hidden;
+	font-family: 'Merriweather sans', sans-serif;
 
-	@media screen and (max-width: 768px) {
-		padding-right: 1.5rem;
-		padding-left: 1.5rem;
+	&:hover {
+		box-shadow: 0 2px 0 rgba(54, 45, 89, .15),
+			-0.1875rem -0.1875rem 0 0.1875rem #f2b712,
+			0 0 0 0.375rem #e1567c;
+		border-radius: .375rem;
 	}
-	
-	&__title {
-		@apply my-4 w-full;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 
-		&__terbaru {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+	> .meta {
+		flex-grow: 0;
 
+		&__summary {
 			> p {
-				@apply text-3xl font-medium my-0 py-1;
-				font-family: 'Bitter', Serif;
+				font-family: 'Merriweather sans', sans-serif;
 			}
 		}
 	}
 
-	&__content {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 2rem;
-		justify-content: center;
-		
-		@media screen and (max-width: 976px) {
-			grid-template-columns: 1fr 1fr;
-		}
+	> .img {
+		display: flex;
+		flex-direction: column;
+		clip-path: polygon(-1% 3.49vw, 101% 0%, 101% 101%, -1% 101%);
+		flex-grow: 1;
+		background-size: cover;
+		background-position: 50% 50%;
+		outline: none;
+	}
+}
 
-		@media screen and (max-width: 576px) {
-			grid-template-columns: 1fr;
-		}
+.links {
+	@apply no-underline font-bold text-2xl;
+	color: var(--text-color);
+	font-family: 'Bitter', sans-serif;
 
-		&__article {
-			@apply shadow-xl overflow-hidden;
-			background-color: var(--card-bg);
-			border-radius: .375rem;
-
-			&:hover {
-				box-shadow: 0 2px 0 rgba(54, 45, 89, .15),
-				-0.1875rem -0.1875rem 0 0.1875rem #f2b712,
-				0 0 0 0.375rem #e1567c;
-			}
-			
-			&__img {
-				@apply rounded shadow-lg;
-				height: 11rem;
-				overflow: hidden;
-			}
-
-			&__meta {
-				@apply py-4 px-6;
-
-				&__title {
-					> h1 {
-						@apply mt-0 mb-1 font-bold text-2xl;
-						color: var(--text-normal);
-						font-family: 'Bitter', Serif;
-					}
-				}
-
-				&__summary {
-					> p {
-						@apply mt-0 mb-2 py-0 leading-normal text-base;
-						color: var(--text-normal);
-						font-family: 'Merriweather sans', sans-serif;
-					} 
-				}
-
-				&__author {
-					> span {
-						@apply mt-0 text-sm;
-						color: var(--text-link);
-					}
-				}
-			}
-		}
+	&:hover {
+		text-decoration: underline;
 	}
 }
 </style>
