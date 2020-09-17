@@ -13,9 +13,9 @@
 		</div>
 		<client-only>
 			<vue-scroll-indicator 
-				height="2px"
-				color="var(--text-indicator)"
-				background="var(--bg-nav)"
+				height="2.2px"
+				color="var(--text-normal)"
+				background="var(--bg)"
 			/>
 		</client-only>
 		<app-to-top />

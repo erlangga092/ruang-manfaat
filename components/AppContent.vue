@@ -86,7 +86,7 @@ export default {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	font-family: 'Righteous', cursive;
+	font-family: 'Bitter', serif;
 
 	@media screen and (max-width: 768px) {
 		padding-right: 1.5rem;
@@ -105,8 +105,8 @@ export default {
 			justify-content: center;
 
 			> p {
-				@apply text-3xl font-medium my-0 py-1 border-b-4 border-yellow-500;
-				font-family: 'Righteous', cursive;
+				@apply text-3xl font-medium my-0 py-1;
+				font-family: 'Bitter', Serif;
 			}
 		}
 	}
@@ -147,9 +147,9 @@ export default {
 
 				&__title {
 					> h1 {
-						@apply mt-0 mb-1 font-medium text-2xl;
+						@apply mt-0 mb-1 font-bold text-2xl;
 						color: var(--text-normal);
-						font-family: 'Righteous', cursive;
+						font-family: 'Bitter', Serif;
 					}
 				}
 

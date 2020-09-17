@@ -1,37 +1,38 @@
 <template>
-	<header>
-		<div class="header">
-			<section class="header__top">
-				<div class="header__top__logo">
+	<div>
+	<header class="header">
+		<div class="header__navbar">
+			<section class="header__navbar__logo">
+				<h1 class="my-0 text-2xl">
 					<nuxt-link
 						to="/"
-						class="header__top__logo__link"
+						class="header__navbar__logo__home"
 					>
-						{{ isLogo }}
+						Ruang-Manfaat
 					</nuxt-link>
-				</div>
-				<div class="header__top__link">
-					<ul>
-						<li>
-							<nuxt-link to="/"
-							class="header__top__link__home">
-								Home
-							</nuxt-link>
-						</li>
-						<li class="switch">
-							<app-switch-theme v-model="isDark" />
+				</h1>
+			</section>
+			<aside class="header__navbar__menu">
+				<div class="header__navbar__menu__list">
+					<ul class="px-8 mx-0 my-0 list-none">
+						<li class="mx-0 my-0 mr-4">
+							<nuxt-link to="/">Home</nuxt-link>
 						</li>
 					</ul>
 				</div>
-			</section>
+				<div class="switch__theme">
+					<app-switch-theme v-model="isDark" />
+				</div>
+			</aside>
 		</div>
 	</header>
+	</div>
 </template>
 
 <script>
 import AppSwitchTheme from '~/components/AppSwitchTheme';
 
-const Cookie = process.client ? require('js-cookie') : undefined;
+const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
 	components: {
@@ -39,13 +40,11 @@ export default {
 	},
 	data() {
 		return {
-			isDark: false,
-			isLogo: 'Ruang-Manfaat'
+			isDark: false
 		}
 	},
 	mounted() {
 		this.initColorScheme();
-		this.initLogo();
 	},
 	methods: {
 		initColorScheme() {
@@ -53,26 +52,19 @@ export default {
 			if (isDark) {
 				if (parseInt(isDark)) {
 					this.isDark = true;
-				} else if (
-					window.matchMedia('(prefers-color-scheme)').media !== 'not all'
-				) {
-					const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-					if (darkModeMediaQuery.matches) {
-						this.isDark = true;
-					} 
-					darkModeMediaQuery.addListener((e) => {
-						const darkModeOn = e.matches;
-						this.isDark = darkModeOn;
-					})
 				}
+			} else if (
+				window.matchMedia('(prefers-color-scheme)').media !== 'not all'
+			) {
+				const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+				if (darkModeMediaQuery.matches) {
+					this.isDark = true;
+				}
+				darkModeMediaQuery.addListener(e => {
+					const darkModeOn = e.matches;
+					this.isDark = darkModeOn;
+				})
 			}
-		},
-		initLogo() {
-			const logoMediaQuery = window.matchMedia('(max-width: 1224px)');
-			logoMediaQuery.addListener((e) => {
-				const logoQuery = e.matches;
-				logoQuery ? this.isLogo = 'RM' : this.isLogo = 'Ruang-Manfaat';
-			})
 		}
 	},
 	head() {
@@ -86,100 +78,96 @@ export default {
 </script>
 
 <style lang="postcss">
-header {
+.header {
 	@apply z-20;
 	width: 100%;
 	top: 0;
-	left: 0;
 	position: fixed;
-	margin-left: auto;
-	margin-right: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	box-sizing: border-box;
+	background-color: var(--card-bg);
+	font-family: 'Bitter', sans-serif;
 
-	.header {
-		@apply shadow-xl px-12;
+	&__navbar {
+		@apply h-20 px-20 py-2 shadow-md;
 		width: 100%;
-		background-color: var(--bg-nav);
-		height: 5rem;
 		display: grid;
-		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		justify-content: center;
 
 		@media screen and (max-width: 768px) {
-			padding-left: 1.5rem;
-			padding-right: 1.5rem;
+			padding-right: 1.75rem;
+			padding-left: 1.75rem;
 		}
 
-		@media screen and (max-width: 768px) {
-			padding-left: 1.25rem;
-			padding-right: 1.25rem;
+		&__logo {
+			display: flex;
+			align-items: center;
+			height: 100%;
+
+			> h1 {
+				color: var(--text-color);
+				font-family: 'Bitter', sans-serif;
+			}
 		}
 
-		&__top {
-			width: 100%;
+		&__menu {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-
-			@media screen and (max-width: 768px) {
-				grid-template-columns: 3fr 1fr;
+			grid-template-columns: 80% 20%;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			@media screen and (max-width: 976px) {
+				grid-template-columns: 1fr;
 			}
 
-			&__logo {
-				display: flex;
-				align-items: center;
-				height: 100%;
+			&__list {
+				@media screen and (max-width: 976px) {
+					display: none;
+				}
 
-				&__link {
-					@apply my-0 py-0 px-0 font-medium text-2xl no-underline;
-					font-family: 'Righteous', cursive;
-					color: var(--text-nav);
+				> ul {
+					display: flex;
+					place-content: flex-end;
+					place-items: center /end;
+					width: 100%;
+					
+					> li {
+						@apply p-2;
 
-					@media screen and (max-width: 576px) {
-						font-size: 1.25rem;
+						> a {
+							@apply underline;
+							color: var(--text-color);
+						}
 					}
 				}
 			}
 
-			&__link {
+			> .switch__theme {
+				width: 100%;
 				display: flex;
-				align-items: center;
-				justify-content: center;
 				height: 100%;
+				place-content: flex-end;
+				place-items: center /end;
 
-				> ul {
-					@apply my-0 py-0;
-					display: flex;
-					align-items: center;
+				@media screen and (max-width: 768px) {
 					place-content: flex-end;
-					list-style: none;
-					width: 100%;
-
-					> li {
-						@apply my-0 py-0 ml-6;
-
-						@media screen and (max-width: 576px) {
-							font-size: 1rem;
-							margin-left: 1rem;
-						}
-
-						> .header__top__link__home {
-							color: var(--text-nav);
-							font-family: 'Righteous', cursive;
-
-							@media screen and (max-width: 576px) {
-								display: none;
-							}
-						}
-					}
-
-					> li .switch {
-						display: flex;
-						align-items: center;
-					}
+					place-items: center /end;
 				}
 			}
 		}
 	}
+}
+
+.translation:hover {
+	color: var(--text-link);
+}
+
+.header__navbar__logo__home {
+	@apply no-underline;
+	color: var(--text-color);
 }
 </style>
