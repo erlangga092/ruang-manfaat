@@ -1,10 +1,5 @@
 <template>
 	<main class="main">
-		<section class="main__title">
-			<div class="main__title__terbaru">
-				<p>Artikel</p>
-			</div>
-		</section>
 		<section class="main__content">
 			<nuxt-link :to="`/blog/${slug}`">
 				<article class="main__content__article">
@@ -143,7 +138,7 @@ export default {
 			}
 
 			&__meta {
-				@apply p-4;
+				@apply py-4 px-6;
 
 				&__title {
 					> h1 {
